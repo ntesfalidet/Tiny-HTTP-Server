@@ -1,0 +1,163 @@
+/*
+ * file_util.c
+ *
+ * Utilities functions for working with C FILE streams.
+ *
+ */
+
+#include <string.h>
+#include <errno.h>
+#include <stdbool.h>
+#include "http_server.h"
+#include "file_util.h"
+
+/**
+ * This function creates a temporary stream for this string.
+ * When the FILE is closed, it will be automatically removed.
+ *
+ * @param contentStr the content of the file
+ * @return the FILE for this string
+ */
+FILE *tmpStringFile(const char *contentStr) {
+	FILE *tmpstream = tmpfile();
+	fwrite(contentStr, 1, strlen(contentStr), tmpstream);
+	rewind(tmpstream);
+	return tmpstream;
+}
+
+/**
+ * This function calls fstat() on the file descriptor of the
+ * specified stream.
+ *
+ * @param stream the stream
+ * @param buf the stat struct
+ * @return 0 if successful, -1 with errno set if error.
+ */
+int fileStat(FILE *stream, struct stat *buf) {
+	int fd = fileno(stream);
+	return fstat(fd, buf);
+}
+
+
+/**
+ * Copy bytes from input stream to output stream
+ * @param istream the input stream
+ * @param ostream the output stream
+ * @param nbytes the number of bytes to send
+ * @param return 0 if successful
+ */
+int copyFileStreamBytes(FILE *istream, FILE *ostream, int nbytes) {
+	char *buf[MAXBUF];
+    while ((nbytes > 0) && !feof(istream)) {
+    	int ntoread = (nbytes < MAXBUF) ? nbytes : MAXBUF;
+        size_t nread = fread(buf, sizeof(char), ntoread, istream);
+        if (nread > 0) {
+			if (fwrite(buf, sizeof(char), nread, ostream) < nread) {
+				perror("copyFileStreamBytes");
+				return -1;
+			}
+			nbytes -= nread;
+		}
+    }
+    return 0;
+}
+
+/**
+ * Returns path component of the file path without trailing
+ * path separator. If no path component, returns NULL.
+ *
+ * @param filePath the path and file
+ * @param pathOfFile return buffer (must be large enough)
+ * @return pointer to pathOfFile or NULL if no path
+ */
+char *getPath(const char *filePath, char *pathOfFile) {
+	char *p = strrchr(filePath, '/');
+	if (p == NULL) {
+		return NULL;
+	}
+	strncpy(pathOfFile, filePath, p-filePath);
+	pathOfFile[p-filePath] = '\0';  // must terminate;
+	return pathOfFile;
+}
+
+/**
+ * Returns name component of the file.
+ *
+ * @param filePath the path and file
+ * @param name return buffer (must be large enough)
+ * @return pointer to name or NULL if no path
+ */
+char *getName(const char *filePath, char *name) {
+	char *p = strrchr(filePath, '/');
+	strcpy(name, (p == NULL) ? filePath : p+1);
+	return name;
+}
+
+/**
+ * Returns extension of the file path without the '.'.
+ * If no extension, returns NULL.
+ *
+ * @param filePath the path and file
+ * @param extension return buffer (must be large enough)
+ * @return pointer to extension or NULL if no path
+ */
+char *getExtension(const char *filePath, char *extension) {
+	char *p = strrchr(filePath, '.');
+	if (p == NULL) {
+		return NULL;
+	}
+	strcpy(extension, p+1);
+	return extension;
+}
+
+/**
+ * Make a file path by combining a path and a file name.
+ * If the file name begins with '/', return the name as an
+ * absolute. Otherwise, concatenate the path and name,
+ * ensuring there is a '/' separator between them.
+ *
+ * @param path the path component
+ * @param name the file name component
+ * @return the file path
+ */
+char *makeFilePath(const char *path, const char *name, char *filepath) {
+	if (name[0] == '/') {
+		strcpy(filepath, name);
+	} else {
+		strcpy(filepath, path);
+		if (path[strlen(path)-1] != '/') {
+			strcat(filepath, "/");
+		}
+		strcat(filepath, name);
+	}
+	return filepath;
+}
+
+/**
+ * Make directories specified by path.
+ *
+ * @param path the path to create
+ * @param mode mode if a directory is created
+ * @return 0 if successful, -1 if error
+ */
+int mkdirs(const char *path, mode_t mode) {
+	char buf[strlen(path)+1];
+	const char *p = (*path == '/') ? path+1 : path;
+	while (*p != '\0') {
+		p = strchr(p, '/');  // find next path separator
+		if (p == NULL) {     // last path element
+			p = path + strlen(path);
+		}
+		strncpy(buf, path, p-path);
+		buf[p-path] = '\0';  // must terminate
+		if (mkdir(buf, mode) == -1) {
+			if (errno == ENOTDIR) {
+				return -1;
+			}
+		}
+		if (*p == '/') {  // advance past path separator
+			p++;
+		}
+	}
+	return 0;
+}

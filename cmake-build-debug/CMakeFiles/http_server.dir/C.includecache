@@ -1,0 +1,284 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../thpool_src/thpool.h
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/file_util.c
+string.h
+-
+errno.h
+-
+stdbool.h
+-
+http_server.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_server.h
+file_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/file_util.h
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/file_util.h
+stdio.h
+-
+sys/stat.h
+-
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_codes.c
+http_codes.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_codes.h
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_codes.h
+stdbool.h
+-
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_methods.c
+stdbool.h
+-
+stdlib.h
+-
+stddef.h
+-
+string.h
+-
+time.h
+-
+sys/stat.h
+-
+sys/param.h
+-
+unistd.h
+-
+dirent.h
+-
+http_codes.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_codes.h
+http_methods.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_methods.h
+http_server.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_server.h
+http_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_util.h
+time_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/time_util.h
+media_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/media_util.h
+properties.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/properties.h
+string_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/string_util.h
+file_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/file_util.h
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_methods.h
+stdio.h
+-
+properties.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/properties.h
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_request.c
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+time.h
+-
+unistd.h
+-
+http_methods.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_methods.h
+http_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_util.h
+string_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/string_util.h
+time_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/time_util.h
+http_server.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_server.h
+http_codes.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_codes.h
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_request.h
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_server.c
+stdbool.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+unistd.h
+-
+limits.h
+-
+file_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/file_util.h
+time_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/time_util.h
+http_request.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_request.h
+network_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/network_util.h
+properties.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/properties.h
+http_server.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_server.h
+media_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/media_util.h
+thpool.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/thpool.h
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_server.h
+stdbool.h
+-
+properties.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/properties.h
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_util.c
+stdio.h
+-
+string.h
+-
+properties.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/properties.h
+file_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/file_util.h
+string_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/string_util.h
+http_codes.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_codes.h
+http_server.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_server.h
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_util.h
+properties.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/properties.h
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/media_util.c
+media_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/media_util.h
+stdlib.h
+-
+string.h
+-
+stdio.h
+-
+ctype.h
+-
+string_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/string_util.h
+http_server.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_server.h
+file_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/file_util.h
+properties.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/properties.h
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/media_util.h
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/network_util.c
+stdio.h
+-
+string.h
+-
+unistd.h
+-
+arpa/inet.h
+-
+netinet/in.h
+-
+sys/socket.h
+-
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/network_util.h
+stdbool.h
+-
+limits.h
+-
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/properties.c
+stdlib.h
+-
+string.h
+-
+stdio.h
+-
+string_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/string_util.h
+http_server.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/http_server.h
+properties.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/properties.h
+varray.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/varray.h
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/properties.h
+stdbool.h
+-
+stdint.h
+-
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/string_util.c
+stdbool.h
+-
+ctype.h
+-
+string.h
+-
+string_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/string_util.h
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/string_util.h
+stdbool.h
+-
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/time_util.c
+time_util.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/time_util.h
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/time_util.h
+time.h
+-
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/varray.c
+varray.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/varray.h
+strings.h
+-
+stdio.h
+-
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/http_src/varray.h
+stdbool.h
+-
+stdlib.h
+-
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/thpool_src/thpool.c
+unistd.h
+-
+signal.h
+-
+stdio.h
+-
+stdlib.h
+-
+pthread.h
+-
+errno.h
+-
+time.h
+-
+sys/prctl.h
+-
+thpool.h
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/thpool_src/thpool.h
+
+/cygdrive/c/Users/ntnat/CS5600/Tiny HTTP Server/thpool_src/thpool.h
+
